@@ -3,5 +3,13 @@
 {% block title %}Последние статьи{% endblock %}
 
 {% block content %}
-   Бла-бла-бла...
+   
+    {% if latest_articles_list %}
+        {% for a in  latest_articles_list %}
+            <a href="#">{{a.article_title}}</a>
+        {% endfor %}
+    {% else %}
+        Статьи не найдены
+    {% endif %}
+
 {% endblock %}
